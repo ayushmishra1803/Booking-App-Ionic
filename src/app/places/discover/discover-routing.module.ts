@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: DiscoverPage
+  },
+  {
+    path: 'place-details',
+    loadChildren: () => import('./place-details/place-details.module').then( m => m.PlaceDetailsPageModule)
   }
 ];
 
