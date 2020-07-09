@@ -31,10 +31,18 @@ export class PlaceDetailsPage implements OnInit {
   book() {
     this.model
       .create({
-        component: BookComponent,
+        component: BookComponent,componentProps:{selectedplaces:this.places}
       })
       .then((re) => {
         re.present();
+       return re.onDidDismiss()
+      }).then((re)=>{
+        console.log(re.data,re.role);
+        if(re.role==="success"){
+          console.log("Booked");
+          
+        }
+        
       });
   }
 }
