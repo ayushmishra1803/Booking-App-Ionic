@@ -1,3 +1,4 @@
+import { BookComponent } from './../../book/book.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -15,6 +16,7 @@ import { PlaceDetailsPage } from './place-details.page';
     IonicModule,
     PlaceDetailsPageRoutingModule
   ],
-  declarations: [PlaceDetailsPage]
+  declarations: [PlaceDetailsPage,BookComponent],
+  entryComponents:[BookComponent]
 })
 export class PlaceDetailsPageModule {}

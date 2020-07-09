@@ -1,3 +1,4 @@
+import { AuthgardGuard } from './auth/gard/authgard.guard';
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
@@ -9,7 +10,7 @@ const routes: Routes = [
   },
   {
     path: "",
-    redirectTo: "places",
+    redirectTo: "auth",
     pathMatch: "full",
   },
   {
@@ -21,11 +22,13 @@ const routes: Routes = [
     path: "places",
     loadChildren: () =>
       import("./places/places.module").then((m) => m.PlacesPageModule),
+    canLoad: [AuthgardGuard],
   },
   {
     path: "booking",
     loadChildren: () =>
       import("./booking/booking.module").then((m) => m.BookingPageModule),
+    canLoad: [AuthgardGuard],
   },
 ];
 
