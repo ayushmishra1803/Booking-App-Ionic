@@ -39,4 +39,7 @@ export class PlacesService {
   getplaces() {
     return [...this._places];
   }
+  getsingleplace(id:string){
+    return {...this._places.find(p=>p.id===id)}
+  }
 }
