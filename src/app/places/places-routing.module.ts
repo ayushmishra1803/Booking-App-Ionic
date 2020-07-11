@@ -5,17 +5,23 @@ import { PlacesPage } from './places.page';
 
 const routes: Routes = [
   {
-    path: '',
-    component: PlacesPage
+    path: "",
+    component: PlacesPage,
+    children: [
+      {
+        path: "discover",
+        loadChildren: () =>
+          import("./discover/discover.module").then(
+            (m) => m.DiscoverPageModule
+          ),
+      },
+      {
+        path: "offer",
+        loadChildren: () =>
+          import("./offer/offer.module").then((m) => m.OfferPageModule),
+      },
+    ],
   },
-  {
-    path: 'discover',
-    loadChildren: () => import('./discover/discover.module').then( m => m.DiscoverPageModule)
-  },
-  {
-    path: 'offer',
-    loadChildren: () => import('./offer/offer.module').then( m => m.OfferPageModule)
-  }
 ];
 
 @NgModule({
