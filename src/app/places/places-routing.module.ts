@@ -5,7 +5,7 @@ import { PlacesPage } from './places.page';
 
 const routes: Routes = [
   {
-    path: "",
+    path: "tabs",
     component: PlacesPage,
     children: [
       {
@@ -21,6 +21,10 @@ const routes: Routes = [
           import("./offer/offer.module").then((m) => m.OfferPageModule),
       },
     ],
+  },
+  {
+    path: "",
+    redirectTo: "/places/tabs/discover",
   },
 ];
 

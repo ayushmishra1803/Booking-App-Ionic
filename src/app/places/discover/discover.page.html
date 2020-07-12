@@ -37,7 +37,7 @@
               fill="clear"
               color="primary"
               routerDirection="forward"
-              [routerLink]="['/','places','discover',place[0].id]"
+              [routerLink]="['/','places','tabs','discover',place[0].id]"
               >More</ion-button
             >
           </div>
@@ -49,7 +49,7 @@
         <ion-virtual-scroll [items]="place">
           <ion-item
             *virtualItem="let iteam"
-            [routerLink]="['/','places','discover',iteam.id]"
+            [routerLink]="['/','places','tabs','discover',iteam.id]"
             detail
           >
             <ion-thumbnail slot="start">
