@@ -1,4 +1,4 @@
-export interface booking
+export interface bookinginterface
 {
 id:string;
 place:string;
