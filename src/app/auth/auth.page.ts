@@ -1,6 +1,7 @@
 import { AuthserviceService } from './auth/authservice.service';
 import { Component, OnInit } from '@angular/core';
 import { LoadingController } from '@ionic/angular';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: "app-auth",
@@ -8,22 +9,16 @@ import { LoadingController } from '@ionic/angular';
   styleUrls: ["./auth.page.scss"],
 })
 export class AuthPage implements OnInit {
-  constructor(private service:AuthserviceService,private loader:LoadingController) {}
-  loading=false;
+  constructor(
+    private service: AuthserviceService,
+    private loader: LoadingController
+  ) {}
+  loading = false;
 
   ngOnInit() {}
-  onlogin(){
-   this.loading = true;
-this.loader
-  .create({ keyboardClose: true, message: "Loging in......" })
-  .then((re) => {
-    re.present();
-
-    setTimeout(() => {
-      this.service.login();
-      re.dismiss();
-    }, 5000);
-  });  
+  onlogin(f:NgForm) {
+  
   }
+  
 }
   
