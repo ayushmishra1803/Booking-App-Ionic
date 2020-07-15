@@ -13,12 +13,13 @@ export class AuthPage implements OnInit {
     private service: AuthserviceService,
     private loader: LoadingController
   ) {}
+  islogin=true;
   loading = false;
 
   ngOnInit() {}
-  onlogin(f:NgForm) {
-  
+  onlogin(f: NgForm) {}
+  onswitch(){
+    this.islogin=!this.islogin;
   }
-  
 }
   

@@ -22,13 +22,13 @@ const routes: Routes = [
     path: "places",
     loadChildren: () =>
       import("./places/places.module").then((m) => m.PlacesPageModule),
-    canLoad: [AuthgardGuard],
+   // canLoad: [AuthgardGuard],
   },
   {
     path: "booking",
     loadChildren: () =>
       import("./booking/booking.module").then((m) => m.BookingPageModule),
-    canLoad: [AuthgardGuard],
+   // canLoad: [AuthgardGuard],
   },
 ];
 
