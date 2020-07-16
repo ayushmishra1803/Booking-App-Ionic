@@ -9,7 +9,9 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class NewOfferPage implements OnInit {
   constructor() {}
   form:FormGroup;
-
+/* 
+*
+*/
   ngOnInit() {
     this.form = new FormGroup({
       title: new FormControl(null, {
@@ -34,6 +36,14 @@ export class NewOfferPage implements OnInit {
       }),
     });
   }
+
+  /* 
+  
+  * Not Updated Yet Offer form
+  
+  */
+
+
   offer() {
     console.log(this.form);
     
