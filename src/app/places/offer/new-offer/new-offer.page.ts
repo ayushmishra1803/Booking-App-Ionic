@@ -10,7 +10,7 @@ export class NewOfferPage implements OnInit {
   constructor() {}
   form:FormGroup;
 /* 
-*Form On the in it method
+*Form On the ngOnInit method
 */
   ngOnInit() {
     this.form = new FormGroup({
