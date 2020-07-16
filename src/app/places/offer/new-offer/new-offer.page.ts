@@ -34,7 +34,7 @@ export class NewOfferPage implements OnInit {
       }),
     });
   }
-  offer() {
+  offer() {//ayushmishra
     console.log(this.form);
     
   }
