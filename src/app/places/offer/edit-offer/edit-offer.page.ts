@@ -1,3 +1,4 @@
+import { FormGroup, FormControl, FormGroupName, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,8 +9,17 @@ import { Component, OnInit } from '@angular/core';
 export class EditOfferPage implements OnInit {
 
   constructor() { }
+ form:FormGroup
 
   ngOnInit() {
+    this.form=new FormGroup({
+      title:new FormControl({
+        Validators:[Validators.required]
+      }),
+      discrition:new FormControl({
+        Validators:[Validators.required]
+      })
+    })
   }
 
 }
