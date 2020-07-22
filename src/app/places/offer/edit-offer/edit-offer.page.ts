@@ -14,10 +14,10 @@ export class EditOfferPage implements OnInit {
   constructor(
     private Active: ActivatedRoute,
     private navCtrl: NavController,
-    private placesService:PlacesService
+    private placesService: PlacesService
   ) {}
   form: FormGroup;
-  place:place;
+  place: place;
 
   ngOnInit() {
     this.Active.paramMap.subscribe((re) => {
@@ -28,7 +28,7 @@ export class EditOfferPage implements OnInit {
 
       this.place = this.placesService.getsingleplace(re.get("placeId"));
       console.log(this.place);
-      
+
       this.form = new FormGroup({
         title: new FormControl(this.place.title, {
           updateOn: "blur",
@@ -40,6 +40,13 @@ export class EditOfferPage implements OnInit {
         }),
       });
     });
- 
+  }
+  offer(){
+   if(!this.form.valid){
+     return
+   }
+   console.log(this.form);
+   
+    
   }
 }
