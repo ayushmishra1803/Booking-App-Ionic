@@ -11,6 +11,45 @@
     </ion-toolbar>
   </ion-header>
   <ion-content style="text-align: center;">
-    <p>{{selectedplaces.description}}</p>
+    <form>
+   <ion-grid>
+     <ion-row>
+       <ion-col size-sm='6' offset-sm="3">
+         <ion-item>
+         <ion-label position="floating"> First Name</ion-label>
+         <ion-input type="text" ngModel name="first-name" required>  </ion-input></ion-item>
+         </ion-col>
+       </ion-row>
+     <ion-row>
+       <ion-col size-sm='6' offset-sm="3">
+          <ion-item>
+         <ion-label position="floating"> last Name</ion-label>
+         <ion-input type="text" ngModel name="last-name" required>  </ion-input></ion-item>
+         </ion-col>
+       </ion-row>
+ <ion-row>
+       <ion-col size-sm='6' offset-sm="3">
+        <ion-item>
+         <ion-label position="floating"> Number of Guest</ion-label>
+        <ion-select [ngModel]="'2'" name="guest">
+          <ion-title>Enter the Number of Guest</ion-title>
+          <ion-select-option value="1">
+            1
+          </ion-select-option>
+          <ion-select-option value="2">
+            2
+          </ion-select-option>
+          <ion-select-option value="3">
+            3
+          </ion-select-option>
+        </ion-select>
+        </ion-item>
+         </ion-col>
+       </ion-row>
+       <ion-row>
+         <ion-col size-sm="6" offset-sm="3"></ion-col>
+         </ion-row>
     <ion-button color="success" (click)="book()">Book</ion-button>
-    </ion-content>
+     </ion-grid>
+  </form> 
+  </ion-content>
