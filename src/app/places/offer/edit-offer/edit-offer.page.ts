@@ -1,3 +1,5 @@
+import { place } from './../../service/placesinterface';
+import { PlacesService } from './../../service/places.service';
 import { ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, FormGroupName, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
@@ -9,10 +11,13 @@ import { NavController } from '@ionic/angular';
   styleUrls: ["./edit-offer.page.scss"],
 })
 export class EditOfferPage implements OnInit {
-  constructor(private Active: ActivatedRoute, private navCtrl: NavController) {}
+  constructor(
+    private Active: ActivatedRoute,
+    private navCtrl: NavController,
+    private placesService:PlacesService
+  ) {}
   form: FormGroup;
-  
- 
+  place:place;
 
   ngOnInit() {
     this.Active.paramMap.subscribe((re) => {
@@ -20,10 +25,18 @@ export class EditOfferPage implements OnInit {
         this.navCtrl.navigateBack(["places/tabs/offers"]);
         return;
       }
-      else{
-        console.log(re);
-        
-      }
+
+      this.place = this.placesService.getsingleplace(re.get("placeId"));
+      this.form = new FormGroup({
+        title: new FormControl(this.place.title, {
+          updateOn: "blur",
+          validators: [Validators.required],
+        }),
+        description: new FormControl(this.place.description, {
+          updateOn: "blur",
+          validators: [Validators.required, Validators.maxLength(180)],
+        }),
+      });
     });
     this.form = new FormGroup({
       title: new FormControl({
