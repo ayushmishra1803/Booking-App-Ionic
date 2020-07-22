@@ -27,6 +27,8 @@ export class EditOfferPage implements OnInit {
       }
 
       this.place = this.placesService.getsingleplace(re.get("placeId"));
+      console.log(this.place);
+      
       this.form = new FormGroup({
         title: new FormControl(this.place.title, {
           updateOn: "blur",
@@ -38,13 +40,6 @@ export class EditOfferPage implements OnInit {
         }),
       });
     });
-    this.form = new FormGroup({
-      title: new FormControl({
-        Validators: [Validators.required],
-      }),
-      discrition: new FormControl({
-        Validators: [Validators.required],
-      }),
-    });
+ 
   }
 }
